@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>锋燃 FENGRAN · iOS 健身应用原型</title>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="stage">
+  <div class="stage-heading">
+    <div class="brand">锋燃 <em>FENGRAN</em> · iOS 应用原型</div>
+    <div class="hint">点击卡片、按钮和标签栏体验完整交互 · 支持左滑返回手势区域为返回按钮</div>
+  </div>
+
+  <div class="device">
+    <div class="device__screen">
+      <div class="device__notch"></div>
+
+      <div class="status-bar">
+        <span id="status-time">9:41</span>
+        <div class="status-bar__icons">
+          <svg viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="currentColor"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="currentColor"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="currentColor"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="currentColor"/></svg>
+          <svg viewBox="0 0 16 12" fill="none"><path d="M8 10.5C8.6 10.5 9 10.1 9 9.5C9 8.9 8.6 8.5 8 8.5C7.4 8.5 7 8.9 7 9.5C7 10.1 7.4 10.5 8 10.5Z" fill="currentColor"/><path d="M4.5 7C5.4 6 6.7 5.4 8 5.4C9.3 5.4 10.6 6 11.5 7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M2 4.3C3.7 2.5 5.8 1.5 8 1.5C10.2 1.5 12.3 2.5 14 4.3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <svg viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="2.5" stroke="currentColor"/><rect x="2" y="2" width="18" height="8" rx="1.3" fill="currentColor"/><rect x="22.5" y="4" width="1.6" height="4" rx="0.8" fill="currentColor"/></svg>
+        </div>
+      </div>
+
+      <div class="app-root" id="app-root">
+
+        <div class="splash" id="splash">
+          <div class="splash__mark"><i class="ph-fill ph-flame"></i></div>
+          <div class="splash__title">锋燃 <span style="color:var(--accent)">FENGRAN</span></div>
+          <div class="splash__tagline">每一次训练，都是淬炼</div>
+        </div>
+
+        <!-- ============================= TAB PANELS ============================= -->
+        <div class="tab-panels">
+
+          <!-- HOME ------------------------------------------------------------- -->
+          <div class="tab-panel is-active" data-tab-panel="home">
+            <div class="nav-stack" data-nav-stack="home">
+
+              <div class="screen" data-screen="home-root" data-stack-state="active">
+                <div class="navbar" data-navbar="home">
+                  <div class="navbar__row">
+                    <div class="navbar__title-inline">首页</div>
+                  </div>
+                </div>
+                <div class="scroll-area scroll-pad-tabbar" data-scroll-observe="home">
+                  <div class="large-title-block">
+                    <div class="navbar__large-title" id="home-greeting">早上好，Alex</div>
+                    <div class="navbar__subtitle" id="home-date">7月15日 星期三</div>
+                  </div>
+                  <div class="scroll-sentinel" data-sentinel="home"></div>
+
+                  <div class="section">
+                    <div class="greeting-row">
+                      <span class="tag tag--accent">今日推日</span>
+                      <span class="streak-pill"><i class="ph-fill ph-flame"></i>连续 12 天</span>
+                    </div>
+                  </div>
+
+                  <div class="section">
+                    <button class="card plan-card u-w-full u-reset-btn" data-action="open-plan" data-plan-id="p1">
+                      <div class="plan-card__eyebrow">今日训练</div>
+                      <div class="plan-card__title">推日 · 胸肩三头</div>
+                      <div class="plan-card__meta">4 个动作 · 约 52 分钟</div>
+                      <div class="plan-card__thumbs" id="home-plan-thumbs"></div>
+                      <span class="btn btn--primary btn--block" data-action="start-workout" data-plan-id="p1"><i class="ph-fill ph-play"></i>开始训练</span>
+                    </button>
+                  </div>
+
+                  <div class="section">
+                    <div class="stat-grid">
+                      <div class="card stat-tile">
+                        <div class="stat-tile__value">4</div>
+                        <div class="stat-tile__label">本周训练</div>
+                      </div>
+                      <div class="card stat-tile">
+                        <div class="stat-tile__value">3.4h</div>
+                        <div class="stat-tile__label">本周时长</div>
+                      </div>
+                      <div class="card stat-tile">
+                        <div class="stat-tile__value">2140</div>
+                        <div class="stat-tile__label">千卡消耗</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="section">
+                    <button class="coach-banner u-w-full u-reset-btn" data-action="open-coach">
+                      <div class="coach-banner__avatar"><i class="ph-fill ph-sparkle"></i></div>
+                      <div style="flex:1">
+                        <div class="coach-banner__title">有训练问题？问问燃燃</div>
+                        <div class="coach-banner__sub">AI 教练 · 计划 / 动作纠正 / 饮食建议</div>
+                      </div>
+                      <i class="ph ph-caret-right" style="color:var(--text-tertiary); font-size:16px;"></i>
+                    </button>
+                  </div>
+
+                  <div class="section">
+                    <div class="section__head">
+                      <div class="section__title">本周训练量</div>
+                      <button class="section__link u-reset-btn" style="width:auto" data-action="goto-stats">查看统计</button>
+                    </div>
+                    <div class="card" style="padding: 8px 14px 4px;">
+                      <div class="mini-bars" id="home-mini-bars"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- LIBRARY ---------------------------------------------------------- -->
+          <div class="tab-panel" data-tab-panel="library">
+            <div class="nav-stack" data-nav-stack="library">
+
+              <div class="screen" data-screen="library-root" data-stack-state="active">
+                <div class="navbar" data-navbar="library">
+                  <div class="navbar__row">
+                    <div class="navbar__title-inline">动作库</div>
+                  </div>
+                </div>
+                <div class="scroll-area scroll-pad-tabbar" data-scroll-observe="library">
+                  <div class="large-title-block">
+                    <div class="navbar__large-title">动作库</div>
+                    <div class="u-flex u-gap-8 u-mt-12">
+                      <div class="search-bar" style="flex:1">
+                        <i class="ph ph-magnifying-glass"></i>
+                        <input type="text" id="library-search" placeholder="搜索动作名称" />
+                      </div>
+                      <button class="filter-btn" id="library-filter-btn" data-action="open-filter">
+                        <i class="ph ph-funnel-simple"></i>
+                        <span class="filter-btn__dot"></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="scroll-sentinel" data-sentinel="library"></div>
+
+                  <div class="chip-row" id="library-chips"></div>
+                  <div class="exercise-grid" id="library-grid"></div>
+                  <div class="empty-state hidden" id="library-empty">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <div class="empty-state__title">没有找到匹配的动作</div>
+                    <div class="empty-state__body">试试更换部位筛选，<br />或清空搜索关键词</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- TRAINING ----------------------------------------------------------- -->
+          <div class="tab-panel" data-tab-panel="training">
+            <div class="nav-stack" data-nav-stack="training">
+
+              <div class="screen" data-screen="training-root" data-stack-state="active">
+                <div class="navbar" data-navbar="training">
+                  <div class="navbar__row">
+                    <div class="navbar__title-inline">训练</div>
+                  </div>
+                </div>
+                <div class="scroll-area scroll-pad-tabbar" data-scroll-observe="training">
+                  <div class="large-title-block">
+                    <div class="navbar__large-title">训练</div>
+                  </div>
+                  <div class="scroll-sentinel" data-sentinel="training"></div>
+
+                  <div class="segmented" id="training-segmented">
+                    <div class="segmented__indicator" id="training-segmented-indicator"></div>
+                    <button class="segmented__item is-active" data-action="segment" data-segment-value="log">记录</button>
+                    <button class="segmented__item" data-action="segment" data-segment-value="plan">计划</button>
+                    <button class="segmented__item" data-action="segment" data-segment-value="stats">统计</button>
+                  </div>
+
+                  <!-- LOG -->
+                  <div data-segment-panel="log">
+                    <div class="section" style="padding-top:14px">
+                      <button class="btn btn--primary btn--block" data-action="start-workout" data-plan-id="p1">
+                        <i class="ph-fill ph-play"></i>开始今日训练 · 推日
+                      </button>
+                    </div>
+                    <div class="section">
+                      <div class="section__head"><div class="section__title">训练记录</div></div>
+                      <div class="list" id="log-list"></div>
+                    </div>
+                  </div>
+
+                  <!-- PLAN -->
+                  <div data-segment-panel="plan" class="hidden">
+                    <div class="section" style="padding-top:14px">
+                      <div class="section__head">
+                        <div class="section__title">我的计划</div>
+                        <button class="section__link u-reset-btn" style="width:auto" data-action="new-plan">新建计划</button>
+                      </div>
+                      <div id="plan-list" style="display:flex; flex-direction:column; gap:12px;"></div>
+                    </div>
+                  </div>
+
+                  <!-- STATS -->
+                  <div data-segment-panel="stats" class="hidden">
+                    <div class="section" style="padding-top:14px">
+                      <div class="section__head"><div class="section__title">本周训练量</div></div>
+                      <div class="card" style="padding: 10px 14px;">
+                        <div class="bar-chart" id="stats-bar-chart"></div>
+                      </div>
+                    </div>
+                    <div class="section">
+                      <div class="section__head"><div class="section__title">训练日历</div></div>
+                      <div class="card" style="padding: 14px;">
+                        <div class="heatmap" id="stats-heatmap"></div>
+                      </div>
+                    </div>
+                    <div class="section">
+                      <div class="section__head"><div class="section__title">个人记录 PR</div></div>
+                      <div class="list" id="stats-pr-list"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="screen" data-screen="plan-detail" data-stack-state="entering-from-right">
+                <div class="navbar no-large-title" data-navbar="plan-detail">
+                  <div class="navbar__row">
+                    <button class="navbar__back" data-action="back" data-stack="training"><i class="ph ph-caret-left"></i>训练</button>
+                    <div class="navbar__title-inline" id="plan-detail-title-inline">计划详情</div>
+                    <span style="width:40px"></span>
+                  </div>
+                </div>
+                <div class="scroll-area scroll-pad-tabbar" id="plan-detail-scroll"></div>
+              </div>
+
+              <div class="screen" data-screen="log-detail" data-stack-state="entering-from-right">
+                <div class="navbar no-large-title" data-navbar="log-detail">
+                  <div class="navbar__row">
+                    <button class="navbar__back" data-action="back" data-stack="training"><i class="ph ph-caret-left"></i>训练</button>
+                    <div class="navbar__title-inline">训练详情</div>
+                    <span style="width:40px"></span>
+                  </div>
+                </div>
+                <div class="scroll-area scroll-pad-tabbar" id="log-detail-scroll"></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- COMMUNITY --------------------------------------------------------- -->
+          <div class="tab-panel" data-tab-panel="community">
+            <div class="nav-stack" data-nav-stack="community">
+
+              <div class="screen" data-screen="community-root" data-stack-state="active">
+                <div class="navbar" data-navbar="community">
+                  <div class="navbar__row">
+                    <div class="navbar__title-inline">社区</div>
+                    <button class="navbar__action" style="margin-left:auto" data-action="publish-post"><i class="ph ph-pencil-simple"></i></button>
+                  </div>
+                </div>
+                <div class="scroll-area scroll-pad-tabbar" data-scroll-observe="community">
+                  <div class="large-title-block u-row-between">
+                    <div class="navbar__large-title">社区</div>
+                  </div>
+                  <div class="scroll-sentinel" data-sentinel="community"></div>
+                  <div class="section" id="community-feed" style="display:flex; flex-direction:column; gap:0;"></div>
+                </div>
+              </div>
+
+              <div class="screen" data-screen="post-detail" data-stack-state="entering-from-right">
+                <div class="navbar no-large-title" data-navbar="post-detail">
+                  <div class="navbar__row">
+                    <button class="navbar__back" data-action="back" data-stack="community"><i class="ph ph-caret-left"></i>社区</button>
+                    <div class="navbar__title-inline">动态详情</div>
+                    <span style="width:40px"></span>
+                  </div>
+                </div>
+                <div class="scroll-area scroll-pad-modal" id="post-detail-scroll" style="flex:1"></div>
+                <div class="comment-input-bar">
+                  <input type="text" id="post-comment-input" placeholder="友善评论，互相激励" />
+                  <button class="comment-input-bar__send" data-action="send-comment"><i class="ph-fill ph-paper-plane-right"></i></button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- PROFILE ------------------------------------------------------------ -->
+          <div class="tab-panel" data-tab-panel="profile">
+            <div class="nav-stack" data-nav-stack="profile">
+
+              <div class="screen" data-screen="profile-root" data-stack-state="active">
+                <div class="navbar" data-navbar="profile">
+                  <div class="navbar__row">
+                    <div class="navbar__title-inline">我的</div>
+                  </div>
+                </div>
+                <div class="scroll-area scroll-pad-tabbar" data-scroll-observe="profile">
+                  <div class="large-title-block">
+                    <div class="navbar__large-title">我的</div>
+                  </div>
+                  <div class="scroll-sentinel" data-sentinel="profile"></div>
+
+                  <div class="section">
+                    <div class="profile-header">
+                      <div class="profile-header__avatar">A</div>
+                      <div>
+                        <div class="profile-header__name">Alex</div>
+                        <div class="profile-header__level">进阶 · 已训练 128 天</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="section">
+                    <div class="stat-grid">
+                      <div class="card stat-tile"><div class="stat-tile__value">156</div><div class="stat-tile__label">总训练次数</div></div>
+                      <div class="card stat-tile"><div class="stat-tile__value">128h</div><div class="stat-tile__label">总训练时长</div></div>
+                      <div class="card stat-tile"><div class="stat-tile__value">12</div><div class="stat-tile__label">连续天数</div></div>
+                    </div>
+                  </div>
+
+                  <div class="section">
+                    <div class="list" id="profile-menu"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- =========================== END TAB PANELS =========================== -->
+
+        <div class="tab-bar">
+          <button class="tab-item is-selected" data-tab-target="home"><i class="ph-fill ph-house"></i><span>首页</span></button>
+          <button class="tab-item" data-tab-target="library"><i class="ph ph-barbell"></i><span>动作库</span></button>
+          <button class="tab-item" data-tab-target="training"><i class="ph ph-list-checks"></i><span>训练</span></button>
+          <button class="tab-item" data-tab-target="community"><i class="ph ph-chats-circle"></i><span>社区</span></button>
+          <button class="tab-item" data-tab-target="profile"><i class="ph ph-user-circle"></i><span>我的</span></button>
+        </div>
+
+        <!-- OVERLAYS: bottom sheets ------------------------------------------- -->
+        <div class="overlay-layer">
+          <div class="backdrop" id="backdrop" data-action="close-overlays"></div>
+
+          <div class="sheet" id="sheet-exercise-detail">
+            <div class="sheet__grabber"></div>
+            <div class="sheet__header">
+              <div class="sheet__title">动作详情</div>
+              <button class="sheet__close" data-action="close-sheet" data-sheet="sheet-exercise-detail"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="sheet__body" id="exercise-detail-body"></div>
+          </div>
+
+          <div class="sheet" id="sheet-filter">
+            <div class="sheet__grabber"></div>
+            <div class="sheet__header">
+              <div class="sheet__title">筛选器械</div>
+              <button class="sheet__close" data-action="close-sheet" data-sheet="sheet-filter"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="sheet__body">
+              <div id="filter-equipment-list" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;"></div>
+              <button class="btn btn--primary btn--block" data-action="apply-filter">应用筛选</button>
+              <button class="btn btn--ghost btn--block u-mt-12" data-action="clear-filter">清空筛选</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- OVERLAYS: full-screen modals --------------------------------------- -->
+        <div class="modal-full" id="modal-workout">
+          <div id="workout-active-view">
+            <div class="workout-header">
+              <button class="workout-header__close" data-action="close-workout"><i class="ph ph-x"></i></button>
+              <div class="workout-header__timer" id="workout-timer">00:00</div>
+              <span style="width:32px"></span>
+            </div>
+            <div class="exercise-dots" id="workout-dots"></div>
+            <div class="scroll-area scroll-pad-modal" style="flex:1">
+              <div class="workout-exercise-header" id="workout-exercise-header"></div>
+              <div class="section" style="padding-top:0">
+                <div class="list" id="workout-set-list"></div>
+              </div>
+              <div class="section u-flex u-gap-8">
+                <button class="btn btn--secondary" style="flex:1" data-action="prev-exercise"><i class="ph ph-caret-left"></i>上一动作</button>
+                <button class="btn btn--secondary" style="flex:1" data-action="next-exercise">下一动作<i class="ph ph-caret-right"></i></button>
+              </div>
+            </div>
+            <div class="section" style="padding-top:0; padding-bottom:calc(16px + var(--home-indicator-h));">
+              <button class="btn btn--primary btn--block" data-action="finish-workout"><i class="ph-fill ph-check-circle"></i>完成训练</button>
+            </div>
+
+            <div class="rest-timer" id="rest-timer">
+              <div class="rest-timer__label">组间休息</div>
+              <div class="rest-ring" id="rest-ring" style="--p:100">
+                <div class="rest-ring__inner" id="rest-ring-value">60</div>
+              </div>
+              <button class="btn btn--secondary" data-action="skip-rest">跳过休息</button>
+            </div>
+          </div>
+
+          <div id="workout-summary-view" class="hidden" style="display:flex; flex-direction:column; height:100%;">
+            <div class="scroll-area scroll-pad-modal" style="flex:1">
+              <div class="summary-hero">
+                <div class="summary-hero__ring"><i class="ph-fill ph-trophy"></i></div>
+                <div class="summary-hero__title">训练完成</div>
+                <div class="summary-hero__sub" id="summary-plan-name">推日 · 胸肩三头</div>
+              </div>
+              <div class="section">
+                <div class="stat-grid">
+                  <div class="card stat-tile"><div class="stat-tile__value" id="summary-duration">52</div><div class="stat-tile__label">分钟</div></div>
+                  <div class="card stat-tile"><div class="stat-tile__value" id="summary-volume">4820</div><div class="stat-tile__label">总容量 kg</div></div>
+                  <div class="card stat-tile"><div class="stat-tile__value" id="summary-sets">14</div><div class="stat-tile__label">完成组数</div></div>
+                </div>
+              </div>
+              <div class="section">
+                <div class="card" style="padding:14px 16px; display:flex; align-items:center; gap:10px;">
+                  <i class="ph-fill ph-medal" style="color:var(--accent); font-size:20px;"></i>
+                  <div style="font-size:13.5px; color:var(--text-secondary);">杠铃卧推刷新个人记录 · 82.5kg，比上次多 2.5kg</div>
+                </div>
+              </div>
+            </div>
+            <div class="section" style="padding-top:0; padding-bottom:calc(16px + var(--home-indicator-h));">
+              <button class="btn btn--primary btn--block" data-action="close-workout-summary">完成</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-full" id="modal-coach">
+          <div class="workout-header" style="justify-content:flex-start; gap:10px;">
+            <button class="workout-header__close" data-action="close-coach"><i class="ph ph-x"></i></button>
+            <div class="coach-banner__avatar" style="width:30px;height:30px;"><i class="ph-fill ph-sparkle" style="font-size:15px;"></i></div>
+            <div>
+              <div style="font-size:15px; font-weight:700;">AI 教练 · 燃燃</div>
+              <div style="font-size:11.5px; color:var(--text-tertiary);">随时为你的训练答疑</div>
+            </div>
+          </div>
+          <div class="scroll-area" id="chat-scroll" style="flex:1">
+            <div class="chat-scroll" id="chat-messages"></div>
+          </div>
+          <div class="quick-reply-row" id="chat-quick-replies"></div>
+          <div class="chat-input-bar">
+            <input type="text" id="chat-input" placeholder="向燃燃提问..." />
+            <button class="chat-input-bar__send" data-action="send-chat"><i class="ph-fill ph-paper-plane-right"></i></button>
+          </div>
+        </div>
+
+        <div class="toast-host" id="toast-host"></div>
+
+      </div>
+
+      <div class="home-indicator"></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
